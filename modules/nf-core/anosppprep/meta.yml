@@ -1,0 +1,53 @@
+name: "anosppprep"
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - sort
+tools:
+  - "anosppprep":
+      ## TODO nf-core: Add a description and other details for the software below
+      description: "ANOSPP data analysis"
+      homepage: "None"
+      documentation: "None"
+      tool_dev_url: "None"
+      doi: ""
+      licence: "['MIT']"
+
+input:
+  # Only when we have meta
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  #
+  - dada_table:
+      type: file
+      description: DADA2 output table
+      pattern: "*.tsv"
+
+  - adapters_df:
+      type: file
+      description: fasta file with adapters used for demultiplexing amplicons
+      pattern: "*.{fa,fasta}"
+
+output:
+  #Only when we have meta
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  #
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  ## TODO nf-core: Delete / customise this example output
+  - haps_tsv:
+      type: file
+      description: Amplicon haplotypes tsv file
+      pattern: "*.tsv"
+
+authors:
+  - "@amakunin"

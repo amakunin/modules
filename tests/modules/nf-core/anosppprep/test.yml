@@ -1,0 +1,8 @@
+- name: anosppprep test_anosppprep
+  command: nextflow run ./tests/modules/nf-core/anosppprep -entry test_anosppprep -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/anosppprep/nextflow.config
+  tags:
+    - anosppprep
+  files:
+    - path: output/anosppprep/haps.tsv
+      md5sum: 204a535e7ab4435f0ffc992e69ac681b
+    - path: output/anosppprep/versions.yml
