@@ -1,0 +1,54 @@
+- name: anosppqc test_anosppqc
+  command: nextflow run ./tests/modules/nf-core/anosppqc -entry test_anosppqc -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/anosppqc/nextflow.config
+  tags:
+    - anosppqc
+  files:
+    - path: output/anosppqc/qc/allele_balance.png
+      md5sum: 0774590158fca3c729c3afff24b46120
+    - path: output/anosppqc/qc/filter_per_sample.png
+      md5sum: f11c6c66ad18348b74b5247aec603a11
+    - path: output/anosppqc/qc/lims_plate_hm_P1_log10_reads.png
+      md5sum: f5950015472e93da9845b3d64c06d51a
+    - path: output/anosppqc/qc/lims_plate_hm_P2_log10_reads.png
+      md5sum: 252880b7f8b1a87fe31513be6da66e6a
+    - path: output/anosppqc/qc/lims_plate_hm_filter_rate.png
+      md5sum: b48ee0a323cb9d0ae258df3bc3512eb7
+    - path: output/anosppqc/qc/lims_plate_hm_final_log10.png
+      md5sum: aad6a791180ecb3a4c78f03509bbe317
+    - path: output/anosppqc/qc/lims_plate_hm_input_log10.png
+      md5sum: 7fe3c28c221eb4320b954f95415afdaa
+    - path: output/anosppqc/qc/lims_plate_hm_mosq_targets_recovered.png
+      md5sum: f93f72438f5f8059c88885a724f2a4e9
+    - path: output/anosppqc/qc/lims_plate_hm_multiallelic_targets.png
+      md5sum: 075ef94e8b816e8ddd95c0459a4c1cce
+    - path: output/anosppqc/qc/lims_plate_summaries.png
+      md5sum: c445918c2da8d33c2a3ef49565ce1c2a
+    - path: output/anosppqc/qc/plate_hm_P1_log10_reads.png
+      md5sum: 15dbf1d8f8e4ad8d30cac082a73e144b
+    - path: output/anosppqc/qc/plate_hm_P2_log10_reads.png
+      md5sum: 261505985dd3d06e653f476b25c8f68d
+    - path: output/anosppqc/qc/plate_hm_filter_rate.png
+      md5sum: d913d60b239411142851b37470193b14
+    - path: output/anosppqc/qc/plate_hm_final_log10.png
+      md5sum: b2f78f0d8bdd0d2c2e2f0aac6a248143
+    - path: output/anosppqc/qc/plate_hm_input_log10.png
+      md5sum: 78c3ccef547237caf805269d73bbbb46
+    - path: output/anosppqc/qc/plate_hm_mosq_targets_recovered.png
+      md5sum: 4ee9d47ea1efe69d0bab4b645dee5f21
+    - path: output/anosppqc/qc/plate_hm_multiallelic_targets.png
+      md5sum: 29e26756e418bec7fc3248821c9ceb35
+    - path: output/anosppqc/qc/plate_stats.png
+      contains:
+        - '# TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead '
+    - path: output/anosppqc/qc/plate_summaries.png
+      md5sum: f441a3d37a3d5de69b2cb9ed32a5f147
+    - path: output/anosppqc/qc/sample_success.png
+      md5sum: 355b3fb8a5e04a36b1fa045acf249d92
+    - path: output/anosppqc/qc/sample_target_nalleles.png
+      md5sum: 8660bf31b113380cd871f20ac51cd293
+    - path: output/anosppqc/qc/sample_target_total_reads.png
+      md5sum: ff138cb1cc1f25f10a4b3d919e14094a
+    - path: output/anosppqc/qc/target_balance.png
+      contains:
+        - '# TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead '
+    - path: output/anosppqc/versions.yml

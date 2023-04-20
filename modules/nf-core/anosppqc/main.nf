@@ -1,5 +1,5 @@
 
-process ANOSPPPREP {
+process ANOSPPQC {
     tag "$meta.id"
     label 'process_low'
 
@@ -9,10 +9,10 @@ process ANOSPPPREP {
         'quay.io/biocontainers/anospp-analysis:0.1.3--pyh7cba7a3_0' }"
 
     input:
-    tuple val(meta), path(dada_table), path(adapters_fa)
+    tuple val(meta), path(haps_tsv), path(manifest), path(stats_tsv)
 
     output:
-    tuple val(meta), path("*.tsv"), emit: haps_tsv
+    tuple val(meta), path("qc/*.png"), emit: qc_plots
     path "versions.yml"           , emit: versions
 
     when:
@@ -22,11 +22,11 @@ process ANOSPPPREP {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    anospp-prep \\
-        -t $dada_table \\
-        -a $adapters_fa \\
-        -o haps.tsv \\
-        -w work \\
+    anospp-qc \\
+        -a $haps_tsv \\
+        -m $manifest \\
+        -s $stats_tsv \\
+        -o qc \\
         -v
 
     cat <<-END_VERSIONS > versions.yml

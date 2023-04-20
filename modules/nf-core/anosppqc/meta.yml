@@ -1,10 +1,10 @@
-name: "anosppprep"
-description: "ANOSPP data deplexing and prep"
+name: "anosppqc"
+description: "ANOSPP data QC summary and plots"
 keywords:
   - amplicon
 tools:
-  - "anosppprep":
-      description: "ANOSPP data deplexing and prep"
+  - "anosppqc":
+      description: "ANOSPP data QC summary and plots"
       homepage: "None"
       documentation: "None"
       tool_dev_url: "None"
@@ -19,15 +19,20 @@ input:
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
 
-  - dada_table:
+  - haps_tsv:
       type: file
-      description: DADA2 output table
+      description: haplotypes tsv file
       pattern: "*.tsv"
 
-  - adapters_df:
+  - manifest:
       type: file
-      description: fasta file with adapters used for demultiplexing amplicons
-      pattern: "*.{fa,fasta}"
+      description: samples manifest
+      pattern: "*.{csv,tsv}"
+
+  - stats_tsv:
+      type: file
+      description: DADA2 statistics tsv file
+      pattern: "*.tsv"
 
 output:
   #Only when we have meta
@@ -42,10 +47,10 @@ output:
       description: File containing software versions
       pattern: "versions.yml"
 
-  - haps_tsv:
+  - qc_plots:
       type: file
-      description: Amplicon haplotypes tsv file
-      pattern: "*.tsv"
+      description: static QC plots
+      pattern: "*.png"
 
 authors:
   - "@amakunin"

@@ -8,8 +8,8 @@ workflow test_anosppprep {
     
     input = [
         [ id:'test'], // meta map
-        file("/lustre/scratch126/tol/teams/lawniczak/users/am60/anospp-ampliseq-240/38081/ampliseq/dada2/DADA2_table.tsv", checkIfExists: true),
-        file("/lustre/scratch126/tol/teams/lawniczak/users/am60/nfanospp_dev/adapters.fa", checkIfExists: true),
+        file("/lustre/scratch126/tol/teams/lawniczak/users/am60/nfanospp_dev/test_data/DADA2_table.tsv", checkIfExists: true),
+        file("/lustre/scratch126/tol/teams/lawniczak/users/am60/nfanospp_dev/test_data/adapters.fa", checkIfExists: true),
     ]
 
     ANOSPPPREP ( input )
